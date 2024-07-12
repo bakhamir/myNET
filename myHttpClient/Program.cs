@@ -1,12 +1,14 @@
 ﻿
 using HtmlAgilityPack;
- namespace myHttpClient
+using System.Net;
+
+namespace myHttpClient
 {
     internal class Program
     {
         static async Task Main(string[] args)
         {
-            await findCurrency();
+             methodDownload();
         }   
 
         static async Task<string> firstMethod()
@@ -75,6 +77,14 @@ using HtmlAgilityPack;
                 }
             }
             //var parentNode = doc.DocumentNode.SelectSingleNode("//div[@id='parent']");
+        }
+        static void methodDownload()
+        {
+            using (var client = new WebClient())
+            {
+                var result = client.DownloadData("https://2ch.hk/b/src/307286908/17207678900210.mp4");
+                File.WriteAllBytes("C:\\temp\\cat.mp4", result);
+            }
         }
     }
 }
