@@ -20,6 +20,7 @@ namespace myHttp
             listener.Start();
             while (true)
             {
+
                 Console.WriteLine("Прослушка работает..");
                 HttpListenerContext context = listener.GetContext();
 
