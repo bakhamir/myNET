@@ -8,7 +8,7 @@ namespace myHttpClient
     {
         static async Task Main(string[] args)
         {
-             methodDownload();
+             findCurrency();
         }   
 
         static async Task<string> firstMethod()
@@ -65,13 +65,20 @@ namespace myHttpClient
 
             foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//div[@class='table-responsive mb-4']"))
             {
-                string[] res = link.InnerText.Split("1");
-
+                string[] res = link.InnerText.Split("1 ");
+                string[] vals = { "USD", "RUB", "GBP", "EUR" };
                 using (StreamWriter outputFile = new StreamWriter(Path.Combine("WriteLines.txt")))
                 {
                     foreach (string line in res)
                     {
-                        outputFile.WriteLine(line);
+                        for (int i = 0; i < vals.Length; i++)
+                        {
+                            if (line.Contains(vals[i]))
+                            {
+                                outputFile.WriteLine(line);
+                            }
+                        }
+                        
                     }
                         
                 }
