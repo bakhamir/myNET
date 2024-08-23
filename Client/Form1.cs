@@ -50,7 +50,7 @@ namespace Client
                     StreamWriter writer = new StreamWriter(stream);
                     writer.WriteLine(message);
                     writer.Flush();
-
+                    
                     // BinaryReader reader = new BinaryReader(new BufferedStream(stream));
                     StreamReader reader = new StreamReader(stream);
                     message = reader.ReadLine();

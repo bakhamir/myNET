@@ -18,7 +18,7 @@ namespace myHttpClient
                 var result = await client.GetStringAsync("https://www.google.com/");
                 return result;
             }
-        }
+        }  
 
         static async Task secondMethod()
         {

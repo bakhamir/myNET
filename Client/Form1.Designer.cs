@@ -28,116 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label2 = new Label();
-            tbPort = new TextBox();
-            label1 = new Label();
-            tbHost = new TextBox();
-            listBox1 = new ListBox();
-            label3 = new Label();
-            tbMessage = new TextBox();
-            button2 = new Button();
-            SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbPort = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbHost = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbMessage = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(25, 374);
-            button1.Name = "button1";
-            button1.Size = new Size(95, 23);
-            button1.TabIndex = 11;
-            button1.Text = "SendToServer";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            this.button1.Location = new System.Drawing.Point(25, 374);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "SendToServer";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(138, 413);
-            label2.Name = "label2";
-            label2.Size = new Size(35, 15);
-            label2.TabIndex = 10;
-            label2.Text = "PORT";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(138, 413);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "PORT";
             // 
             // tbPort
             // 
-            tbPort.Location = new Point(182, 410);
-            tbPort.Name = "tbPort";
-            tbPort.Size = new Size(115, 23);
-            tbPort.TabIndex = 9;
-            tbPort.Text = "8090";
+            this.tbPort.Location = new System.Drawing.Point(182, 410);
+            this.tbPort.Name = "tbPort";
+            this.tbPort.Size = new System.Drawing.Size(115, 23);
+            this.tbPort.TabIndex = 9;
+            this.tbPort.Text = "8090";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(138, 374);
-            label1.Name = "label1";
-            label1.Size = new Size(37, 15);
-            label1.TabIndex = 8;
-            label1.Text = "HOST";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(138, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "HOST";
             // 
             // tbHost
             // 
-            tbHost.Location = new Point(182, 371);
-            tbHost.Name = "tbHost";
-            tbHost.Size = new Size(115, 23);
-            tbHost.TabIndex = 7;
-            tbHost.Text = "localhost";
+            this.tbHost.Location = new System.Drawing.Point(182, 371);
+            this.tbHost.Name = "tbHost";
+            this.tbHost.Size = new System.Drawing.Size(115, 23);
+            this.tbHost.TabIndex = 7;
+            this.tbHost.Text = "localhost";
             // 
             // listBox1
             // 
-            listBox1.Dock = DockStyle.Top;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(0, 0);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(531, 349);
-            listBox1.TabIndex = 6;
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(531, 349);
+            this.listBox1.TabIndex = 6;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(138, 452);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 15);
-            label3.TabIndex = 13;
-            label3.Text = "Message";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(138, 452);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Message";
             // 
             // tbMessage
             // 
-            tbMessage.Location = new Point(197, 449);
-            tbMessage.Name = "tbMessage";
-            tbMessage.Size = new Size(115, 23);
-            tbMessage.TabIndex = 12;
-            tbMessage.Text = "Hello STEP";
+            this.tbMessage.Location = new System.Drawing.Point(197, 449);
+            this.tbMessage.Name = "tbMessage";
+            this.tbMessage.Size = new System.Drawing.Size(115, 23);
+            this.tbMessage.TabIndex = 12;
+            this.tbMessage.Text = "Hello STEP";
             // 
             // button2
             // 
-            button2.Location = new Point(360, 374);
-            button2.Name = "button2";
-            button2.Size = new Size(137, 23);
-            button2.TabIndex = 14;
-            button2.Text = "SendToTCPServer";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            this.button2.Location = new System.Drawing.Point(360, 374);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 23);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "SendToTCPServer";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(531, 507);
-            Controls.Add(button2);
-            Controls.Add(label3);
-            Controls.Add(tbMessage);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(tbPort);
-            Controls.Add(label1);
-            Controls.Add(tbHost);
-            Controls.Add(listBox1);
-            Name = "Form1";
-            Text = "Form1";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(531, 507);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbMessage);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbPort);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbHost);
+            this.Controls.Add(this.listBox1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
