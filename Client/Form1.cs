@@ -1,7 +1,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-
+using Syste
 namespace Client
 {
     public partial class Form1 : Form
