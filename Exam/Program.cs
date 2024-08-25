@@ -44,8 +44,8 @@ namespace Exam
         public static void SendFilesViaTcp()
         {
             string[] files = { "sample1.txt", "sample2.txt", "sample3.txt", "sample4.txt" };
-            string server = "127.0.0.1"; // IP-адрес вашего сервера
-            int port = 8080; // Порт вашего сервера
+            string server = "127.0.0.1"; 
+            int port = 8080; 
 
             foreach (var file in files)
             {
@@ -101,13 +101,11 @@ namespace Exam
             string pdfUrl = "https://beeline.kz/binaries/content/assets/public_offer/public_offer_ru.pdf";
             string localFilePath = Path.Combine(downloadFolder, "exam.pdf");
 
-            // Скачивание файла
             using (var client = new WebClient())
             {
                 client.DownloadFile(pdfUrl, localFilePath);
             }
 
-            // Отправка файла на FTP без сохранения на диск
             using (var ftpStream = new WebClient().OpenRead(pdfUrl))
             using (var memoryStream = new MemoryStream())
             {
@@ -237,9 +235,9 @@ namespace Exam
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting all exam tasks...");
+            Console.WriteLine("start...");
             ExamTasks.PerformAllTasks();
-            Console.WriteLine("All tasks completed.");
+            Console.WriteLine("end");
         }
     }
 }
