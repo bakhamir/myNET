@@ -1,7 +1,9 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using Syste
+using System.IO;
+using System.IO.Compression;
+
 namespace Client
 {
     public partial class Form1 : Form
@@ -13,27 +15,44 @@ namespace Client
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SendToServer();
+            SendFileToServer();
         }
 
-        async Task SendToServer()
+        async Task SendFileToServer()
         {
             await Task.Run(() =>
             {
-                byte[] bytes = new byte[1024];
+                var filePath = "path_to_file"; // Укажите путь к файлу
+                byte[] fileBytes = File.ReadAllBytes(filePath);
                 var ip = Dns.GetHostEntry(tbHost.Text);
                 var ad = ip.AddressList[0];
                 var ep = new IPEndPoint(ad, int.Parse(tbPort.Text));
                 Socket sender = new Socket(ad.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+
                 sender.Connect(ep);
-                byte[] msg = Encoding.UTF8.GetBytes(tbMessage.Text);
-                int count = sender.Send(msg);
-                count = sender.Receive(bytes);
-                listBox1.Items.Add("Ответ от сервера " + Encoding.UTF8.GetString(bytes, 0, count));
+
+                // Отправка длины файла
+                byte[] fileLengthBytes = BitConverter.GetBytes(fileBytes.Length);
+                sender.Send(fileLengthBytes);
+
+                // Отправка файла
+                sender.Send(fileBytes);
+
+                // Прием архивированного файла
+                byte[] buffer = new byte[1024];
+                int bytesRead = sender.Receive(buffer);
+                using (var fs = new FileStream("received_file.zip", FileMode.Create))
+                {
+                    fs.Write(buffer, 0, bytesRead);
+                }
+
+                listBox1.Items.Add("Файл получен и сохранен как received_file.zip");
+
                 sender.Shutdown(SocketShutdown.Both);
                 sender.Close();
             });
         }
+<<<<<<< HEAD
 
         async Task SendToServer2()
         {
@@ -79,5 +98,7 @@ namespace Client
         {
             SendToServer2();
         }
+=======
+>>>>>>> c26e7e8 (fix)
     }
 }
